@@ -22,3 +22,8 @@ Route::get('/todos/{id}','TodoController@show')->name('todos.show');
 Route::get('/todos/{id}/edit','TodoController@edit')->name('todos.edit');
 Route::put('/todos/{id}','TodoController@update')->name('todos.update');
 Route::delete('/todos/{id}','TodoController@destroy')->name('todos.destroy');
+
+//this will enable email verification routes
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

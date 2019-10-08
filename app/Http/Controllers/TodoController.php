@@ -7,6 +7,12 @@ use App\Todo;
 
 class TodoController extends Controller
 {
+    //blocks access to all methods from unauth users
+    public function __construct(){
+      $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
