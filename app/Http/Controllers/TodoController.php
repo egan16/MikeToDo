@@ -112,7 +112,7 @@ class TodoController extends Controller
         //first validate the form data
         $requst->validate($rules,$messages);
         //update the todo
-        $todo     = Todo::findOrFail($id);
+        $todo = Todo::findOrFail($id);
         $todo->title = $request->title;
         $todo->body = $requst->body;
         $todo->save();
